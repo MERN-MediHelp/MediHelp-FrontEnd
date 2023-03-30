@@ -7,13 +7,13 @@ function GetTools() {
 
     useEffect(() => {
         
-        const loadTools = async () => {
+        const getAllTools = async () => {
             const data = await fetch(`${baseUrl}/tools`, {mode: "cors"}
             )
                 .then(response => response.json());
             setTools(data);
         }
-        loadTools();
+        getAllTools();
     }, []);
 
     // fetch(`${baseUrl}/tools`)
