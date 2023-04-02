@@ -1,10 +1,11 @@
 import "E:\\JavaScript\\React\\medihelp\\src\\components\\tools\\AddTools.css"
-import { AddTools } from "../../components/tools/AddTools";
+// import { AddTools } from "../../components/tools/AddTools";
+import { AltAddTools } from "../../components/tools/AltAddTools";
 
 function AddToolsPage() {
     return (
         <div>
-            <AddTools />
+            <AltAddTools />
         </div>
     );
 }
