@@ -3,7 +3,7 @@ function AddTools() {
     return (
     <div className="container">
         <h2>Add a tool to donate</h2>
-        <form id="add_tool_form">
+        <form id="add_tool_form" method="POST" encType="multipart/form-data">
             <div className="group">
                 <input id="tool_name" type="text"/>
                 <span className="highlight"></span>
