@@ -5,7 +5,7 @@ function AltAddTools() {
     let [toolName, setToolName] = useState("");
     let [toolDescription, setToolDescription] = useState("");
     const handleSubmit = async() => {
-            await fetch(`${baseUrl}/tools/post`, {
+            await fetch(`${baseUrl}/post`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

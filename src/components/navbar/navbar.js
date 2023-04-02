@@ -3,6 +3,7 @@ import { webSiteURL } from '../../config';
 function NavBar() {
     let url = webSiteURL + "tools";
     let addTools = webSiteURL + "add";
+    let deleteTools = webSiteURL + "delete";
 
     return (
     <header className="header">
@@ -10,6 +11,7 @@ function NavBar() {
         <ul className="main-nav">
             <li><a id="AddTools" href={addTools} >Add Tools</a></li>
             <li><a id="ViewTools" href={url} >View Tools</a></li>
+            <li><a id="DeleteTools" href={deleteTools} >delete Tools</a></li>
         </ul>
 	</header>
     );
