@@ -11,7 +11,7 @@ function DeleteToolCard({ name, description, id }) {
         window.location.reload();
     }
     return (
-        <div key={id} className="card">
+        <div className="card">
             <div key={id} className="general">
                 <h3>{name}</h3>
                 <div>{description}</div>
