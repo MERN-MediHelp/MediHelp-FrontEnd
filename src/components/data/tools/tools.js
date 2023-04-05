@@ -1,10 +1,11 @@
-import { ToolCard } from  'E:\\JavaScript\\React\\medihelp\\src\\components\\tools\\tools.js';
-import { DeleteToolCard } from '../../tools/DeleteTools';
-import { UpdateToolCard } from '../../tools/UpdateTools';
+// import { ToolCard } from  'E:\\JavaScript\\React\\medihelp\\src\\components\\tools\\tools.js';
+import { ToolCard, DeleteToolCard, UpdateToolCard } from '../../tools/tools';
+// import { DeleteToolCard } from '../../tools/DeleteTools';
+// import { UpdateToolCard } from '../../tools/UpdateTools';
 import { baseUrl } from '../../../config';
 import { useEffect, useState } from 'react';
 
-function GetTools(props) {
+function ToolsData(props) {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
@@ -70,5 +71,5 @@ function GetTools(props) {
 }
 
 export {
-    GetTools,
+    ToolsData,
 }

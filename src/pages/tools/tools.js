@@ -1,4 +1,4 @@
-import { GetTools } from  'E:\\JavaScript\\React\\medihelp\\src\\components\\data\\tools\\tools.js';
+import { ToolsData } from  'E:\\JavaScript\\React\\medihelp\\src\\components\\data\\tools\\tools.js';
 import { NavBar } from '../../components/navbar/navbar';
 
 // View all tools page
@@ -6,7 +6,7 @@ function Tools() {
     return (
         <div>
             <NavBar />
-            <GetTools />
+            <ToolsData />
         </div>
     );
 }
@@ -16,7 +16,7 @@ function DeleteTools() {
     return (
         <div>
             <NavBar />
-            <GetTools isDelete={true} />
+            <ToolsData isDelete={true} />
         </div>
     );
 }
@@ -25,7 +25,7 @@ function UpdateTools() {
     return (
         <div>
             <NavBar />
-            <GetTools isUpdate={true} />
+            <ToolsData isUpdate={true} />
         </div>
     );
 }
