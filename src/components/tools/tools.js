@@ -16,8 +16,9 @@ function ToolCard({ name, description, id }) {
 }
 
 function UpdateToolCard({ name, description, id }) {
-    let [toolName, setToolName] = useState("");
-    let [toolDescription, setToolDescription] = useState("");
+    let [toolName, setToolName] = useState(name);
+    let [toolDescription, setToolDescription] = useState(description);
+
     const handleSubmit = async () => {
         const name = toolName;
         const description = toolDescription;
