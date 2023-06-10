@@ -5,7 +5,7 @@ import { ToolCard, DeleteToolCard, UpdateToolCard } from '../../tools/tools';
 import { baseUrl } from '../../../config';
 import { useEffect, useState } from 'react';
 
-function ToolsData(props) {
+const ToolsData = (props) => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {

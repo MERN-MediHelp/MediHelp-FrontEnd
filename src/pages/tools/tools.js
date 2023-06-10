@@ -1,8 +1,8 @@
-import { ToolsData } from  'E:\\JavaScript\\React\\medihelp\\src\\components\\data\\tools\\tools.js';
 import { NavBar } from '../../components/navbar/navbar';
-
+import {ToolsData}  from  'E:\\JavaScript\\React\\medihelp\\src\\components\\data\\tools\\tools.js';
+// import ToolsData from '../../components/data/tools/tools';
 // View all tools page
-function Tools() {
+const Tools = () => {
     return (
         <div>
             <NavBar />
@@ -12,7 +12,7 @@ function Tools() {
 }
 
 // Delete tools page
-function DeleteTools() { 
+const DeleteTools = () => { 
     return (
         <div>
             <NavBar />
@@ -21,7 +21,7 @@ function DeleteTools() {
     );
 }
 
-function UpdateTools() {
+const UpdateTools = () => {
     return (
         <div>
             <NavBar />

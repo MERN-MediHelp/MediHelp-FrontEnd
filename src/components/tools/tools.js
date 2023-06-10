@@ -2,7 +2,7 @@ import "./styles.css";
 import "./AddTools.css";
 import { baseUrl } from "../../config";
 import { useState } from "react";
-function ToolCard({ name, description, id }) {
+const ToolCard = ({ name, description, id }) => {
     return (
         <div className="card">
             <div className="general">
@@ -15,7 +15,7 @@ function ToolCard({ name, description, id }) {
     );
 }
 
-function UpdateToolCard({ name, description, id }) {
+const UpdateToolCard = ({ name, description, id }) => {
     let [toolName, setToolName] = useState(name);
     let [toolDescription, setToolDescription] = useState(description);
 
@@ -57,7 +57,7 @@ function UpdateToolCard({ name, description, id }) {
     );
 }
 
-function DeleteToolCard({ name, description, id }) {
+const DeleteToolCard = ({ name, description, id }) => {
     const handleSubmit = async () => { 
         await fetch(`${baseUrl}/delete/${id}`, {
             method: "DELETE",
@@ -80,7 +80,7 @@ function DeleteToolCard({ name, description, id }) {
     );
 }
 
-function AltAddTools() { 
+const AltAddTools = () => { 
     let [toolName, setToolName] = useState("");
     let [toolDescription, setToolDescription] = useState("");
     const handleSubmit = async() => {
