@@ -1,8 +1,5 @@
-// import { ToolCard } from  'E:\\JavaScript\\React\\medihelp\\src\\components\\tools\\tools.js';
 import { ToolCard, DeleteToolCard, UpdateToolCard } from '../../tools/tools';
-// import { DeleteToolCard } from '../../tools/DeleteTools';
-// import { UpdateToolCard } from '../../tools/UpdateTools';
-import { baseUrl } from '../../../config';
+import { javaSpringBootProductAPI } from '../../../config';
 import { useEffect, useState } from 'react';
 
 const ToolsData = (props) => {
@@ -11,7 +8,7 @@ const ToolsData = (props) => {
     useEffect(() => {
         
         const getAllTools = async () => {
-            const data = await fetch(`${baseUrl}`, {mode: "cors"}
+            const data = await fetch(`${javaSpringBootProductAPI}`, {mode: "cors"}
             )
                 .then(response => response.json());
             setTools(data);
@@ -21,24 +18,24 @@ const ToolsData = (props) => {
 
     const toolsList = tools.map((tool) => {
         return (
-            <li key={tool._id}>
-                <ToolCard name={tool.name} description={tool.description} id={tool._id}/>
+            <li key={tool.id}>
+                <ToolCard name={tool.name} description={tool.description} id={tool.id}/>
             </li>
         );
     });
 
     const toDeleteList = tools.map((tool) => {
         return (
-            <li key={tool._id}>
-                <DeleteToolCard name={tool.name} description={tool.description} id={tool._id}/>
+            <li key={tool.id}>
+                <DeleteToolCard name={tool.name} description={tool.description} id={tool.id}/>
             </li>
         );
     });
 
     const toUpdate = tools.map((tool) => { 
         return (
-            <li key={tool._id}>
-                <UpdateToolCard name={tool.name} description={tool.description} id={tool._id} />
+            <li key={tool.id}>
+                <UpdateToolCard name={tool.name} description={tool.description} id={tool.id} />
             </li>
         );
     });

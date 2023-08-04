@@ -32,3 +32,5 @@ $document.on('submit', '#add_tool_form', function(e) {
         }
     });
 });
+
+// NOT USING JQUERY WITH REACT

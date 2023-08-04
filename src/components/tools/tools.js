@@ -1,6 +1,6 @@
 import "./styles.css";
 import "./AddTools.css";
-import { baseUrl } from "../../config";
+import { javaSpringBootProductAPI } from "../../config";
 import { useState } from "react";
 const ToolCard = ({ name, description, id }) => {
     return (
@@ -27,7 +27,7 @@ const UpdateToolCard = ({ name, description, id }) => {
             description: description,
         };
         console.log(data);
-        await fetch(`${baseUrl}/update/${id}`, {
+        await fetch(`${javaSpringBootProductAPI}/${id}`, {
             method: "PUT",
             mode: "cors",
             headers: {
@@ -36,7 +36,6 @@ const UpdateToolCard = ({ name, description, id }) => {
             body: JSON.stringify(data),
         })
             .then(response => response.json());
-        window.location.reload();
     }
     return (
         <div className="card">
@@ -59,13 +58,11 @@ const UpdateToolCard = ({ name, description, id }) => {
 
 const DeleteToolCard = ({ name, description, id }) => {
     const handleSubmit = async () => { 
-        await fetch(`${baseUrl}/delete/${id}`, {
+        await fetch(`${javaSpringBootProductAPI}/${id}`, {
             method: "DELETE",
             mode: "cors",
         })
             .then(response => response.json());
-
-        window.location.reload();
     }
     return (
         <div className="card">
@@ -83,18 +80,29 @@ const DeleteToolCard = ({ name, description, id }) => {
 const AltAddTools = () => { 
     let [toolName, setToolName] = useState("");
     let [toolDescription, setToolDescription] = useState("");
-    const handleSubmit = async() => {
-            await fetch(`${baseUrl}/post`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    toolName, toolDescription
-                }),
-                mode: "cors",
-            })
-                .then(response => response.json());
+
+    async function sendRequest(){
+        //fetch the date form spring boot api http://localhost:8081/api/product
+        // Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+        // https://stackoverflow.com/questions/43871637/no-access-control-allow-origin-header-is-present-on-the-requested-resource-whe
+        const response = await fetch(`${javaSpringBootProductAPI}`, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            //body: JSON.stringify(data),
+            body: JSON.stringify({
+                name: toolName,
+                description: toolDescription,
+            }),
+        }).then(response => response.json());
+        console.log(response);
+    }
+
+    const handleSubmit = (e) => {
+            e.preventDefault();
+            sendRequest();
             setToolName("");
             setToolDescription("");
         }
